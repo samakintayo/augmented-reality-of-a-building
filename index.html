@@ -1,29 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; template</title>
-    <meta charset="utf-8">
-    <meta name="description" content="&lt;model-viewer&gt; template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" href="./styles.css" rel="stylesheet"/>
-    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Augmented Reality of Architectural Model</title>
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
-    <model-viewer src="house-model.glb?v=1660912223110" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.png" shadow-intensity="1">
-      <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-      </div>
-      <button slot="ar-button" id="ar-button">
-          View in your space
-      </button>
-      <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-      </div>
-    </model-viewer>  
-    <script src="script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    
+      <h1 style="text-align:center; padding-top:50px;">
+        AR WALKTHROUGH MODEL
+      </h1>
+    
+    <h2 style="margin-left:50px; color:red;">
+      Instructions on how to view the Model in AR
+     
+    </h2>
+     <h3 style="margin-left:50px;">
+        1. Click the <strong>View in AR</strong> Button <br>
+        2. Ensure the Surrounding is well lighted <br>
+        3. Find an open space to load the experience <br>
+        4. Enjoy your Walkthrough
+      </h3>
+    <div id="card">
+      
+      <!-- All you need to put beautiful, interactive 3D content on your site: -->
+      <model-viewer
+        src="https://cdn.glitch.global/70f7b21b-c9ab-4c59-ac59-29c011bf90c0/house-model.glb?v=1660912223110"
+        ios-src="https://cdn.glitch.global/70f7b21b-c9ab-4c59-ac59-29c011bf90c0/house-model.usdz?v=1660912227522"
+        alt="house-3d-model"
+        shadow-intensity="1"
+        camera-controls
+        auto-rotate
+        ar
+      >
+        <button slot="ar-button"  class="btn btn-primary btn-lg" id="ar-button">View in AR</button>
+      </model-viewer>
+    </div>
   </body>
 </html>
